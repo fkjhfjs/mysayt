@@ -172,8 +172,8 @@ a:visited {
 }
 
 .delete-button {
-      background-color: #ffaacc;
-      color: black;
+      background-color: #ff0000;
+      color: white;
       border: none;
       padding: 5px 10px;
       cursor: pointer;
