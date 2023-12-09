@@ -38,7 +38,34 @@
         <button type="submit">Отправить отзыв</button>
       </form>
     </div>
+<div class="reviews" id="reviewsContainer">
+	
+    </div>
   </main>
+
+  <script>
+    function addReview() {
+      var name = document.getElementById('name').value;
+      var email = document.getElementById('email').value;
+      var message = document.getElementById('message').value;
+
+      var reviewContainer = document.getElementById('reviewsContainer');
+
+      var reviewDiv = document.createElement('div');
+      reviewDiv.className = 'review';
+
+      var reviewContent = document.createElement('p');
+      reviewContent.innerHTML = '<strong>' + name + '</strong> (' + email + '): ' + message;
+
+      reviewDiv.appendChild(reviewContent);
+      reviewContainer.appendChild(reviewDiv);
+
+      // Очистка полей формы
+      document.getElementById('name').value = '';
+      document.getElementById('email').value = '';
+      document.getElementById('message').value = '';
+    }
+  </script>
 			</div>
 			<div id="nav">
 				<ul>Главная</ul>
