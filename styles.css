@@ -213,3 +213,16 @@ main {
       padding: 10px 20px;
       cursor: pointer;
     }
+
+    .reviews {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .review {
+      background-color: #fff;
+      border: 1px solid #ddd;
+      padding: 10px;
+      margin-bottom: 10px;
+      border-radius: 5px;
+    }
