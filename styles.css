@@ -1,0 +1,178 @@
+body {
+    background-image: url('https://avatars.mds.yandex.net/i?id=f2107608bccb2cd32ebad9e794927998cef9bbd7-9101109-images-thumbs&n=13');
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+#wrapper {
+  background: #fcc0e8;   
+  width: 1000px;
+  margin:0 auto;
+  HEIGHT: 630PX;
+    clear: both;
+	outline: 0.5px black solid;
+  
+}
+    #header {
+    background-image:url('');
+	background-size: 100%;
+  width: 1000px;
+  margin:0 auto;
+  height: 120px;
+  text-align: center;
+  outline: 0.5px #ff0000;
+    }
+#Zagolovok {
+  padding-top: 30px;
+}
+#content {
+    float: right;
+    background: #fff;
+  width: 780px;
+  margin:0 auto;
+  height: 450px;
+  padding: 10px;
+	  outline: 0.5px black solid;
+	  text-indent: 30px;
+    text-align: justify;
+
+}
+a:visited {
+  color: black;
+}
+#nav a:hover {
+  font-size: 105%;
+  text-decoration: none;
+}
+#nav {
+    float: left;
+    background: #fcc0e8;
+  width: 180px;
+  margin:0 auto;
+  height: 450px;
+  padding: 10px;
+  font-size: 10pt;
+    outline: 0.5px black solid;
+    text-align: justify;
+}
+#nav a {
+  text-decoration: none;
+
+}
+#footer {
+    background: #fcc0e8;
+  width: 1000px;
+  margin:0 auto;
+  height: 40px;
+  padding: 5 px;
+    clear: both;
+  outline: 0.5px black solid;
+  text-align: justify;
+}
+#content-nav-wrapper {
+	background: #fff;
+	width: 1000px;
+	height: 470px;
+	margin: 0;
+}
+.italic{
+	font-style: italic;
+	letter-spacing: 3px;
+	font-weight: bold;
+}
+.Cambria{
+	font-style: Cambria;
+	font-size:25px;
+    color:#fff!important;
+    text-shadow: 1px 1px 1px #000;
+
+}
+.Kursiv{
+	font-style: italic;
+  letter-spacing: 3px;
+}
+.otstup{
+  font-size: 15px;
+  padding-left: 0px;
+  padding-right: 0px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+#knopki{
+  margin-top: 25%;
+  padding-left: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#root{
+  margin: 500px;
+  font-size: 20px;
+}
+#login{
+  width: 250px;
+  height: 20px;
+}
+#password{
+  width: 250px;
+  height: 20px;
+}
+.chlen3 {
+  width: 130px;
+  height: 130px;
+}
+
+.chlen3:hover {
+  width: 150px;
+  height: 150px;
+}
+#firstimgg {
+  width: 120px;
+  height: 120px;
+  display: grid;
+  grid-template-columns: repeat(4, 175px);
+  float: left;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+#imgg > p {
+  width: 175px;
+  height: 30px;
+  text-align:start;
+  padding-right: 5px;
+  text-overflow: ellipsis;
+  overflow: hidden; 
+  font-size: 10pt;
+}
+
+#content6 {
+  float: right;
+  background: #fff;
+  width: 780px;
+  margin:0 auto;
+  height: 450px;
+  padding: 10px;
+  outline: 0.5px black solid;
+  text-align: justify;
+}
+.container {
+    width: 75%;
+    border: 2px solid #ccc;
+    background-color: #eee;
+    border-radius: 5px;
+    padding: 16px;
+    margin: 16px auto;
+}
+.container img {
+    float: left;
+    margin-right: 20px;
+    border-radius: 50%;
+    width: 90px;
+}
+.container span {
+    font-size: 18px;
+    margin-right: 15px;
+}
