@@ -26,9 +26,9 @@
 				<p>Кондитерская "Счастье"</p>
 			</div>
 			<div class="container"> 
-			  <div id="reviewForm">
+				<div id="reviewForm">
 				  <h2>Оставьте свой отзыв</h2>
-				  <form onsubmit="addReview(event)">
+				  <form onsubmit="addReview(); return false;">
 					  <p> <label for="name">Ваше имя:</label>
 						  <input type="text" id="name" required></p>
 					  <p><label for="message">Ваш отзыв:</label>
