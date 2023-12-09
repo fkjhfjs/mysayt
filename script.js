@@ -2,9 +2,7 @@ document.addEventListener('DOMContentLoaded', function() {
   loadReviews();
 });
 
-function addReview(event) {
-  event.preventDefault();
-
+function addReview() {
   var name = document.getElementById('name').value;
   var message = document.getElementById('message').value;
 
@@ -21,7 +19,15 @@ function addReview(event) {
   var reviewContent = document.createElement('p');
   reviewContent.innerHTML = '<strong>' + name + ':</strong> ' + message;
 
+  var deleteButton = document.createElement('button');
+  deleteButton.className = 'delete-button';
+  deleteButton.textContent = 'Удалить';
+  deleteButton.onclick = function() {
+    deleteReview(reviewDiv);
+  };
+
   reviewDiv.appendChild(reviewContent);
+  reviewDiv.appendChild(deleteButton);
   reviewContainer.appendChild(reviewDiv);
 
   document.getElementById('name').value = '';
@@ -52,7 +58,37 @@ function loadReviews() {
     var reviewContent = document.createElement('p');
     reviewContent.innerHTML = '<strong>' + review.name + ':</strong> ' + review.message;
 
+    var deleteButton = document.createElement('button');
+    deleteButton.className = 'delete-button';
+    deleteButton.textContent = 'Удалить';
+    deleteButton.onclick = function() {
+      deleteReview(reviewDiv);
+    };
+
     reviewDiv.appendChild(reviewContent);
+    reviewDiv.appendChild(deleteButton);
     reviewContainer.appendChild(reviewDiv);
+  });
+}
+
+function deleteReview(reviewDiv) {
+  var reviewContainer = document.getElementById('reviewsContainer');
+  reviewContainer.removeChild(reviewDiv);
+
+  // Обновляем localStorage после удаления отзыва
+  var reviews = getReviewsFromStorage();
+  var reviewContent = reviewDiv.querySelector('p').textContent;
+  var index = findReviewIndex(reviews, reviewContent);
+  if (index !== -1) {
+    reviews.splice(index, 1);
+    localStorage.setItem('reviews', JSON.stringify(reviews));
+  }
+}
+
+function findReviewIndex(reviews, reviewContent) {
+  return reviews.findIndex(function(review) {
+    return (
+      '<strong>' + review.name + ':</strong> ' + review.message === reviewContent
+    );
   });
 }
