@@ -16,6 +16,22 @@
 				<p class="normalText">
 					<h1><span class="bold italic">Кондитерская "Счастье"</span></h1>
 				<p>Кондитерская с широким ассортиментом блюд несложного приготовления, булочных, кондитерских изделий.</p>
+				
+  <div id="reviewForm">
+    <h2>Оставьте свой отзыв</h2>
+    <label for="name">Ваше имя:</label>
+    <input type="text" id="name" required>
+
+    <label for="message">Ваш отзыв:</label>
+    <textarea id="message" rows="4" required></textarea>
+
+    <button onclick="addReview()">Добавить отзыв</button>
+  </div>
+
+  <div id="reviewsContainer">
+  </div>
+
+  <script src="script.js"></script>
 			</div>
 			<div id="nav">
 				<ul>Главная</ul>
