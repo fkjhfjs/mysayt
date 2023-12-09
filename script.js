@@ -2,7 +2,9 @@ document.addEventListener('DOMContentLoaded', function() {
   loadReviews();
 });
 
-function addReview() {
+function addReview(event) {
+  event.preventDefault();
+
   var name = document.getElementById('name').value;
   var message = document.getElementById('message').value;
 
