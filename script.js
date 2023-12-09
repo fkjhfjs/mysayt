@@ -21,7 +21,7 @@ function addReview() {
 
   var deleteButton = document.createElement('button');
   deleteButton.className = 'delete-button';
-  deleteButton.textContent = 'Удалить';
+  deleteButton.innerHTML = 'Удалить';
   deleteButton.onclick = function() {
     deleteReview(reviewDiv);
   };
@@ -60,7 +60,7 @@ function loadReviews() {
 
     var deleteButton = document.createElement('button');
     deleteButton.className = 'delete-button';
-    deleteButton.textContent = 'Удалить';
+    deleteButton.innerHTML = 'Удалить';
     deleteButton.onclick = function() {
       deleteReview(reviewDiv);
     };
@@ -76,19 +76,18 @@ function deleteReview(reviewDiv) {
   reviewContainer.removeChild(reviewDiv);
 
   // Обновляем localStorage после удаления отзыва
-  var reviews = getReviewsFromStorage();
-  var reviewContent = reviewDiv.querySelector('p').textContent;
-  var index = findReviewIndex(reviews, reviewContent);
-  if (index !== -1) {
-    reviews.splice(index, 1);
-    localStorage.setItem('reviews', JSON.stringify(reviews));
-  }
+  updateLocalStorage();
 }
 
-function findReviewIndex(reviews, reviewContent) {
-  return reviews.findIndex(function(review) {
-    return (
-      '<strong>' + review.name + ':</strong> ' + review.message === reviewContent
-    );
+function updateLocalStorage() {
+  var reviews = [];
+  var reviewDivs = document.querySelectorAll('.review');
+
+  reviewDivs.forEach(function(reviewDiv) {
+    var name = reviewDiv.querySelector('strong').textContent;
+    var message = reviewDiv.querySelector('p').textContent.replace(name + ': ', '');
+    reviews.push({ name: name, message: message });
   });
+
+  localStorage.setItem('reviews', JSON.stringify(reviews));
 }
